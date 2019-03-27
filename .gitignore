@@ -1,0 +1,6 @@
+# Eclipse IDE project files
+/.settings
+/.buildpath
+/.project
+/vendor/
+/.phpunit.result.cache
