@@ -12,7 +12,7 @@ trait ExtendedDomElementTrait
      * @var ExtendedDomElement
      */
     protected $xmlRoot;
-    
+
     /**
      * @param string $xml String of XML content
      * @param ?bool $standalone
@@ -26,7 +26,7 @@ trait ExtendedDomElementTrait
         ?bool $standalone = null,
         ?bool $preserveWhiteSpace = null,
         ?bool $formatOutput = null
-    ): self {
+        ): self {
         $dom = ExtendedDomElement::getDomDocument();
         if ($standalone !== null) {
             $dom->xmlStandalone = $standalone;
@@ -41,10 +41,10 @@ trait ExtendedDomElementTrait
             throw new ExtendedDomElementException('Unexpected error while loading XML');
         }
         $this->setXmlRoot($dom->documentElement);
-        
+
         return $this;
     }
-    
+
     /**
      * @param string $selector node path for ExtendedDomElement relative to self::xmlRoot
      * @param string $value nodeValue
@@ -54,10 +54,10 @@ trait ExtendedDomElementTrait
     public function setXmlValue(string $selector, ?string $value): self
     {
         $this->xmlRoot->setValue($selector, $value);
-        
+
         return $this;
     }
-    
+
     /**
      * @param ExtendedDomElement $xmlRoot
      * @return self
@@ -65,10 +65,10 @@ trait ExtendedDomElementTrait
     public function setXmlRoot(ExtendedDomElement $xmlRoot): self
     {
         $this->xmlRoot = $xmlRoot;
-        
+
         return $this;
     }
-    
+
     /**
      * @return ExtendedDomElement
      */
@@ -76,7 +76,7 @@ trait ExtendedDomElementTrait
     {
         return $this->xmlRoot;
     }
-    
+
     /**
      * @param string $selector
      * @return ExtendedDomElement
@@ -85,7 +85,7 @@ trait ExtendedDomElementTrait
     {
         return $this->xmlRoot->getElement($selector);
     }
-       
+
     /**
      * @param string $selector
      * @return string
@@ -94,7 +94,7 @@ trait ExtendedDomElementTrait
     {
         return $this->xmlRoot->getValue($selector);
     }
-       
+
     /**
      * @param \DOMNode $oldNode
      * @return self
@@ -102,14 +102,14 @@ trait ExtendedDomElementTrait
     public function removeXmlNode(\DOMNode $oldNode): self
     {
         ExtendedDomElement::removeNode($oldNode);
-        
+
         return $this;
     }
-     
+
     /**
      * @param string $selector
      * @param string $name
-     * @return string
+     * @return string|NULL
      */
     public function getXmlAttribute(string $selector, string $name): ?string
     {
@@ -117,10 +117,10 @@ trait ExtendedDomElementTrait
         if (!$element) {
             return null;
         }
-        
+
         return $element->getAttribute($name);
     }
-       
+
     /**
      * @param string $selector attribute element select
      * @param string $name attribute name
@@ -133,7 +133,7 @@ trait ExtendedDomElementTrait
         if ($element) {
             $element->setAttribute($name, $value);
         }
-        
+
         return $this;
     }
 }
