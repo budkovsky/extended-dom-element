@@ -13,7 +13,7 @@ in XPath-like way.
 
 Just create your DOMDocument object this way:
 
-```
+```php
 use Budkovsky\ExtendedDomElement\ExtendedDomElement;
 #...
 $dom = ExtendedDomElement::getDomDocument();
