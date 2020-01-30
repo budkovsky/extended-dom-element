@@ -30,7 +30,7 @@ $dom->documentElement->getElement('element1/subelement2/subelement3');
 $dom->getElementById('some-element')->getElement->(subelement1/subelement2/subelement3');
 ```
 
-If default, element in selector is match to first child with valid element name.
+If default, name in selector is matched to the first child with valid element name.
 If you want to match different, non-first child on given DOM element, just add colon char and index number to the selector.
 
 ```php
