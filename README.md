@@ -34,5 +34,5 @@ If default, name in selector is matched to the first child with valid element na
 If you want to match different, non-first child on given DOMDocument level, just add colon char and index number to the selector.
 
 ```php
-$dom->documentElement->getElement('someelement:2/subelement:4);
+$dom->documentElement->getElement('someelement:2/subelement:4');
 ```
