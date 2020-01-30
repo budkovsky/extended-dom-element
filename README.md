@@ -27,7 +27,7 @@ If you want to select any element from your DOM object just use:
 ```php
 $dom->documentElement->getElement('element1/subelement2/subelement3');
 #OR
-$dom->getElementById('some-element')->getElement->(subelement1/subelement2/subelement3');
+$dom->getElementById('some-element')->getElement->('subelement1/subelement2/subelement3');
 ```
 
 If default, name in selector is matched to the first child with valid element name.
