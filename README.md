@@ -31,7 +31,7 @@ $dom->getElementById('some-element')->getElement->(subelement1/subelement2/subel
 ```
 
 If default, name in selector is matched to the first child with valid element name.
-If you want to match different, non-first child on given DOM element, just add colon char and index number to the selector.
+If you want to match different, non-first child on given DOMDocument level, just add colon char and index number to the selector.
 
 ```php
 $dom->documentElement->getElement('someelement:2/subelement:4);
